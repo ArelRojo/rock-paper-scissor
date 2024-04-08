@@ -77,10 +77,17 @@ paths:
                 $ref: '#/components/schemas/MatchDTO'
   /movement:
     get:
+      parameters:
+        - in: query
+          name: idMatch
+          required: true
+          schema:
+            type: integer
+            format: int64
       tags:
         - movement
       description: Get all movements
-      operationId: getMovements
+      operationId: getMovementsByMatch
       responses:
         "200":
           description: OK
@@ -104,7 +111,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MatchDTO'
+                $ref: '#/components/schemas/MovementDTO'
 
 components:
   schemas:

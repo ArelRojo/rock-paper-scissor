@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -21,5 +22,11 @@ public class MatchServiceimpl implements MatchService {
     @Override
     public List<Match> retrieveMatchs() {
         return repository.findAll();
+    }
+
+    @Override
+    public Match retrieveById(Long id) {
+        Optional<Match> matchOptional = repository.findById(id);
+        return matchOptional.orElse(null);
     }
 }

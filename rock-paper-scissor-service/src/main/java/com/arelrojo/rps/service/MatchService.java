@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface MatchService {
 
-    public Match save(Match match);
+    Match save(Match match);
 
-    public List<Match> retrieveMatchs();
+    List<Match> retrieveMatchs();
+
+    Match retrieveById(Long id);
 }

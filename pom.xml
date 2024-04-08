@@ -16,12 +16,12 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>rock-paper-scissor-endpoint</module>
 		<module>rock-paper-scissor-domain</module>
 		<module>rock-paper-scissor-boot</module>
 		<module>rock-paper-scissor-repository</module>
 		<module>rock-paper-scissor-service</module>
 		<module>rock-paper-scissor-service-impl</module>
-		<module>rock-paper-scissor-endpoint</module>
 	</modules>
 
 	<properties>

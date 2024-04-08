@@ -7,7 +7,7 @@ import com.arelrojo.rps.contract.endpoint.model.MatchDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+
 
 import java.util.List;
 @RequiredArgsConstructor
@@ -27,12 +27,14 @@ public class MatchApiDelegateImpl implements MatchApiDelegate {
     }
 
     public  ResponseEntity<MatchDTO> getMatch(Long id){
-        return null;
+        var match = matchService.retrieveById(id);
+        var matchDTO = matchMapper.entityToDTO(match);
+        return ResponseEntity.ok().body(matchDTO);
     }
 
     public ResponseEntity<List<MatchDTO>> getMatches(){
         var list = matchService.retrieveMatchs();
-        var listDTO = list.stream().map(m -> matchMapper.entityToDTO(m)).toList();
+        var listDTO = list.stream().map(matchMapper::entityToDTO).toList();
         return ResponseEntity.ok().body(listDTO);
     }
 }

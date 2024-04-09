@@ -90,7 +90,6 @@ public class MovementServiceImpl implements MovementService {
     private static RPSMove getComputerMove() {
         Random random = new Random();
         int randomNumber = random.nextInt(3);
-
         return RPSMove.values()[randomNumber];
     }
 

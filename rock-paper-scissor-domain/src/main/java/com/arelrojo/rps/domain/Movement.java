@@ -14,7 +14,7 @@ public class Movement {
     @ManyToOne
     private Match match;
 
-    private Integer num;
+    private Integer moveOrder;
 
     @Enumerated(EnumType.STRING)
     private RPSMove robotType;

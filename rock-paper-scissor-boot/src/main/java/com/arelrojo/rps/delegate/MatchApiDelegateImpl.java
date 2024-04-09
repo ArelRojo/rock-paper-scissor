@@ -1,5 +1,6 @@
 package com.arelrojo.rps.delegate;
 
+import com.arelrojo.rps.contract.endpoint.model.MetricsDTO;
 import com.arelrojo.rps.mapper.MatchMapper;
 import com.arelrojo.rps.service.MatchService;
 import com.arelrojo.rps.contract.endpoint.api.MatchApiDelegate;
@@ -36,5 +37,10 @@ public class MatchApiDelegateImpl implements MatchApiDelegate {
         var list = matchService.retrieveMatchs();
         var listDTO = list.stream().map(matchMapper::entityToDTO).toList();
         return ResponseEntity.ok().body(listDTO);
+    }
+
+    public ResponseEntity<MetricsDTO> getMetrics(String type){
+        MetricsDTO metricsDTO = matchService.retrieveMatchMetrics(type);
+        return ResponseEntity.ok().body(metricsDTO);
     }
 }

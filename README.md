@@ -1,6 +1,12 @@
 # Rock Paper Scissor 
 
-This project is based on Spring boot application 
+This project is based on a Spring boot application. 
+
+### Game rules
+
+ - Rock beats Scissors
+ - Scissors beats Paper
+ - Paper beats Rock
 
 # Technology used
 - Programming language: JAVA 17

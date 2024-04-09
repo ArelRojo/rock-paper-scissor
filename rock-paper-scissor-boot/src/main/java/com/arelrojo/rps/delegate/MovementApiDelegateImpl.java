@@ -67,8 +67,8 @@ public class MovementApiDelegateImpl implements MovementApiDelegate {
         //Guardar la partida
         matchService.save(match);
 
-
         //Devolver los datos del movimiento
+        movement.setNum(match.getMovements());
         movement = movementService.save(movement);
         movementDTO = movementMapper.entityToDTO(movement);
         return ResponseEntity.ok().body(movementDTO);

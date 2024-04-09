@@ -24,7 +24,6 @@ public class MovementServiceImpl implements MovementService {
     private final MatchService matchService;
     private static final String PLAYER_HUMAN = "HUMAN";
     private static final String PLAYER_ROBOT = "ROBOT";
-    private static final String DRAW = "DRAW";
 
     @Override
     public Movement save(Movement movement) {
@@ -56,10 +55,6 @@ public class MovementServiceImpl implements MovementService {
     public String determineWinner(Movement movement) {
         RPSMove human = movement.getHumanType();
         RPSMove robot = movement.getRobotType();
-
-        if (human == robot) {
-            return DRAW;
-        }
 
         switch (human) {
             case PAPER:

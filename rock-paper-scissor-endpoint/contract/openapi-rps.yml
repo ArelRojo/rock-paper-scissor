@@ -138,15 +138,21 @@ components:
         idMatch:
           type: integer
           format: int64
-        order:
+        num:
           type: integer
         robotType:
-          type: string
+          $ref: '#/components/schemas/RPSMove'
         humanType:
-          type: integer
+          $ref: '#/components/schemas/RPSMove'
         isFinal:
           type: boolean
     MovementsDTO:
       type: array
       items:
         $ref: '#/components/schemas/MovementDTO'
+    RPSMove:
+      type: string
+      enum:
+        - ROCK
+        - PAPER
+        - SCISSOR

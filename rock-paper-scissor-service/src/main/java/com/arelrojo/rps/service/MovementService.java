@@ -7,4 +7,8 @@ import java.util.List;
 public interface MovementService {
     Movement save(Movement movement);
     List<Movement> retrieveByMatchId(Long id);
+
+    Movement completeMovement(Movement movement);
+
+
 }

@@ -2,9 +2,9 @@ package com.arelrojo.rps.domain;
 
 
 public enum RPSMove {
-    ROCK("rock"),
-    PAPER("paper"),
-    SCISSORS("scissors");
+    ROCK("ROCK"),
+    PAPER("PAPER"),
+    SCISSOR("SCISSOR");
 
     private String value;
 

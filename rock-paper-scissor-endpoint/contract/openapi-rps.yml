@@ -173,13 +173,17 @@ components:
       type: object
       properties:
         wins:
-          type: integer
+          type: double
         rock:
-          type: integer
+          type: double
         paper:
-          type: integer
+          type: double
         scissor:
-          type: integer
+          type: double
+    MetricsDTOArray:
+      type: array
+      items:
+        $ref: '#/components/schemas/MetricsDTO'
     RPSMove:
       type: string
       enum:

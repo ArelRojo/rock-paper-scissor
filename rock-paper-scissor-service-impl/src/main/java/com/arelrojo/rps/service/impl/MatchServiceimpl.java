@@ -46,14 +46,14 @@ public class MatchServiceimpl implements MatchService {
         int totalMatches = (int) repository.count();
         double winPercentage = (double) matches.size() / totalMatches * 100;
 
-        int rockCount = countMoves(matches, type, RPSMove.ROCK);
-        int paperCount = countMoves(matches, type, RPSMove.PAPER);
-        int scissorCount = countMoves(matches, type, RPSMove.SCISSOR);
+        double rockCount = (double) countMoves(matches, type, RPSMove.ROCK) / totalMatches * 100;
+        double paperCount = (double) countMoves(matches, type, RPSMove.PAPER) / totalMatches * 100;
+        double scissorCount = (double) countMoves(matches, type, RPSMove.SCISSOR) / totalMatches * 100;
 
         dto.setRock(rockCount);
         dto.setPaper(paperCount);
         dto.setScissor(scissorCount);
-        dto.setWins((int) winPercentage);
+        dto.setWins(winPercentage);
         return dto;
     }
 

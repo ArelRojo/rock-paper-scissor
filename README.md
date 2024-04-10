@@ -45,9 +45,13 @@ This module contains various service interfaces.
 This project is designed following the SOLID principles, which are a set of five software design principles that promote the creation of more maintainable, scalable, and understandable systems. Below are brief descriptions of these principles:
 
 S - Single Responsibility Principle: Each class should have only one responsibility and one reason to change.
+
 O - Open/Closed Principle: Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+
 L - Liskov Substitution Principle: Objects in a program should be replaceable with instances of their subtypes without altering the program's behavior.
+
 I - Interface Segregation Principle: Clients should not be forced to depend on interfaces they do not use.
+
 D - Dependency Inversion Principle: High-level modules should not depend on low-level modules, but both should depend on abstractions. Additionally, abstractions should not depend on details, but details should depend on abstractions. 
 
 ## Comments in code

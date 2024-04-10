@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class MatchServiceimpl implements MatchService {
 
     private final MatchRepository repository;
-    private final MovementService movementService;
+    private final MovementsRepository movementsRepository;
     private static final String PLAYER_HUMAN = "HUMAN";
     private static final String PLAYER_ROBOT = "ROBOT";
     @Override
@@ -42,13 +42,13 @@ public class MatchServiceimpl implements MatchService {
     public MetricsDTO retrieveMatchMetrics(String type) {
         MetricsDTO dto = new MetricsDTO();
 
-        List<Match> matches = repository.findAllByWinner(type);
+        List<Match> matches = repository.findAllByWinner(type.toUpperCase());
         int totalMatches = (int) repository.count();
         double winPercentage = (double) matches.size() / totalMatches * 100;
 
-        double rockCount = (double) countMoves(matches, type, RPSMove.ROCK) / totalMatches * 100;
-        double paperCount = (double) countMoves(matches, type, RPSMove.PAPER) / totalMatches * 100;
-        double scissorCount = (double) countMoves(matches, type, RPSMove.SCISSOR) / totalMatches * 100;
+        double rockCount = (double) countMoves(matches, type, RPSMove.ROCK) / matches.size() * 100;
+        double paperCount = (double) countMoves(matches, type, RPSMove.PAPER) / matches.size() * 100;
+        double scissorCount = (double) countMoves(matches, type, RPSMove.SCISSOR) / matches.size() * 100;
 
         dto.setRock(rockCount);
         dto.setPaper(paperCount);
@@ -60,7 +60,7 @@ public class MatchServiceimpl implements MatchService {
     private int countMoves(List<Match> matches, String type, RPSMove moveType) {
         return (int) matches.stream()
                 .map(Match::getId)
-                .map(id -> movementService.findByMatchIdAndIsFinal(id, true))
+                .map(id -> movementsRepository.findByMatchIdAndIsFinal(id, true))
                 .filter(m -> m != null && (type.equalsIgnoreCase(PLAYER_HUMAN) || type.equalsIgnoreCase(PLAYER_ROBOT)))
                 .filter(m -> type.equalsIgnoreCase(PLAYER_HUMAN) ? m.getHumanType() == moveType : m.getRobotType() == moveType)
                 .count();

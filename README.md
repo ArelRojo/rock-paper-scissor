@@ -40,7 +40,7 @@ This module contains various service interfaces.
  Each module contains its own POM file, which serves as the configuration and metadata for that particular module. 
  Additionally, there is a parent POM file that oversees the entire project and coordinates the build process across all modules.
 
- ## Solid Priniciples
+ ## SOLID Priniciples
 
 This project is designed following the SOLID principles, which are a set of five software design principles that promote the creation of more maintainable, scalable, and understandable systems. Below are brief descriptions of these principles:
 

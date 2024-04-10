@@ -19,7 +19,7 @@ public class Match {
 
     private String winner;
 
-    private Integer movements =0;
+    private Integer movements = 0;
 
 
 }

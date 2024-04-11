@@ -15,6 +15,17 @@ This project is based on a Spring boot application.
 - In-memory database: H2
 - Build tool: Maven
 
+## Steps to run the project
+> Prerequisite
+- Maven
+- Java 17
+
+> Start the application by executing the following command:
+
+mvn clean install spring-boot:run 
+
+Maven will install all the dependencies and then run the application.
+
 ## Modularization 
 This project is organized as a multi-module project, where different parts of the functionality are divided into separate modules. 
 This modular approach enhances code organization, maintainability, and scalability. Below is an overview of the project's module structure:

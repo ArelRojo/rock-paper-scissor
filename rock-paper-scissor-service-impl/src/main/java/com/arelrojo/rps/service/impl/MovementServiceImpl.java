@@ -47,11 +47,6 @@ public class MovementServiceImpl implements MovementService {
         return movement;
     }
 
-    @Override
-    public Movement findByMatchIdAndIsFinal(long matchId, boolean isFinal) {
-        return repository.findByMatchIdAndIsFinal(matchId, true);
-    }
-
     public String determineWinner(Movement movement) {
         RPSMove human = movement.getHumanType();
         RPSMove robot = movement.getRobotType();
@@ -87,7 +82,7 @@ public class MovementServiceImpl implements MovementService {
         return movementMapper.entityToDTO(movement);
     }
 
-    private static RPSMove getComputerMove() {
+    public RPSMove getComputerMove() {
         Random random = new Random();
         int randomNumber = random.nextInt(3);
         return RPSMove.values()[randomNumber];

@@ -2,21 +2,18 @@ package com.arelrojo.rps.service.impl;
 
 import com.arelrojo.rps.contract.endpoint.model.MetricsDTO;
 import com.arelrojo.rps.domain.Match;
-import com.arelrojo.rps.domain.Movement;
 import com.arelrojo.rps.domain.RPSMove;
 import com.arelrojo.rps.repository.MatchRepository;
 import com.arelrojo.rps.repository.MovementsRepository;
 import com.arelrojo.rps.service.MatchService;
-import com.arelrojo.rps.service.MovementService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class MatchServiceimpl implements MatchService {
+public class MatchServiceImpl implements MatchService {
 
     private final MatchRepository repository;
     private final MovementsRepository movementsRepository;
@@ -28,7 +25,7 @@ public class MatchServiceimpl implements MatchService {
     }
 
     @Override
-    public List<Match> retrieveMatchs() {
+    public List<Match> retrieveMatches() {
         return repository.findAll();
     }
 
@@ -57,7 +54,7 @@ public class MatchServiceimpl implements MatchService {
         return dto;
     }
 
-    private int countMoves(List<Match> matches, String type, RPSMove moveType) {
+    public int countMoves(List<Match> matches, String type, RPSMove moveType) {
         return (int) matches.stream()
                 .map(Match::getId)
                 .map(id -> movementsRepository.findByMatchIdAndIsFinal(id, true))

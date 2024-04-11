@@ -34,7 +34,7 @@ public class MatchApiDelegateImpl implements MatchApiDelegate {
     }
 
     public ResponseEntity<List<MatchDTO>> getMatches(){
-        var list = matchService.retrieveMatchs();
+        var list = matchService.retrieveMatches();
         var listDTO = list.stream().map(matchMapper::entityToDTO).toList();
         return ResponseEntity.ok().body(listDTO);
     }

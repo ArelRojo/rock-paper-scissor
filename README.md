@@ -22,7 +22,9 @@ This project is based on a Spring boot application.
 
 > Start the application by executing the following command:
 
-mvn clean install spring-boot:run 
+To execute this command you will need to navigate to rock-paper-scissor-boot module.
+
+` mvn clean install spring-boot:run `
 
 Maven will install all the dependencies and then run the application.
 

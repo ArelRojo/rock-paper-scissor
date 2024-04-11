@@ -28,6 +28,8 @@ To execute this command you will need to navigate to rock-paper-scissor-boot mod
 
 Maven will install all the dependencies and then run the application.
 
+Once the application is running, you'll need to access the application.yml file located in the rock-paper-scissor-boot module under resources. In this file, you'll find the credentials (username and password) required for authentication.
+
 ## Modularization 
 This project is organized as a multi-module project, where different parts of the functionality are divided into separate modules. 
 This modular approach enhances code organization, maintainability, and scalability. Below is an overview of the project's module structure:

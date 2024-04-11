@@ -75,5 +75,5 @@ In line with that philosophy, the code is self-explanatory and does not require 
 While comments can sometimes be useful for providing context or explanations, 
 is believed that well-named variables, functions, and classes, along with clear and concise code structure, should suffice to convey intent.
 
-As a result, you will find minimal use of comments within our codebase. Instead, we focus on writing code that is inherently understandable and avoids the need for excessive commenting.
+As a result, you will find minimal use of comments within the codebase. Instead, the focus is on writing code that is inherently understandable and avoids the need for excessive commenting.
  

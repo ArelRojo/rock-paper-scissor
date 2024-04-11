@@ -8,3 +8,7 @@ spring:
     name: rock-paper-scissor-boot
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+  security:
+    user:
+      name: user
+      password: user

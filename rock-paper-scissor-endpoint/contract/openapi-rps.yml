@@ -17,9 +17,6 @@ servers:
 tags:
   - name: rps
     description: Operations about rock, paper, scissor
-    externalDocs:
-      description: Find out more about our store
-      url: http://swagger.io
   - name: match
     description: Operations about matches
   - name: movement

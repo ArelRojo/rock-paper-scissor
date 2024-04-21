@@ -128,9 +128,29 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/MovementDTO'
+  /auth:
+    post:
+      operationId: auth
+      requestBody:
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/AuthDTO'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthDTO'
 
 components:
   schemas:
+    AuthDTO:
+      type: object
+      properties:
+        user:
+          type: string
     MatchDTO:
       type: object
       properties:
